@@ -1,0 +1,10 @@
+.DS_Store
+*.o
+lib/Lingua/Stem/Snowball/Lt.c
+blib/
+_build/
+Makefile
+MYMETA.yml
+MYMETA.json
+Build
+
