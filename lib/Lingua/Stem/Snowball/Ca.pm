@@ -92,6 +92,8 @@ sub stem {
 
 __END__
 
+=encoding utf8
+
 =head1 NAME
 
 Lingua::Stem::Snowball::Ca - Perl interface to Snowball stemmer for the Catalan language.
