@@ -1,6 +1,7 @@
 package Lingua::Stem::Snowball::Ca;
 use strict;
 use warnings;
+use utf8;
 use 5.006002;
 
 use Carp;
@@ -90,6 +91,8 @@ sub stem {
 1;
 
 __END__
+
+=encoding utf8
 
 =head1 NAME
 
