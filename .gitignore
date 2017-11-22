@@ -7,4 +7,5 @@ Makefile
 MYMETA.yml
 MYMETA.json
 Build
+*.bak
 
