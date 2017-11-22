@@ -1,5 +1,7 @@
 # Lingua-Stem-Snowball-Ca
 
+[![Build Status](https://travis-ci.org/pypt/p5-Lingua-Stem-Snowball-Ca.svg?branch=master)](https://travis-ci.org/pypt/p5-Lingua-Stem-Snowball-Ca)
+
 ## INSTALLATION
 
 To install this module type the following:
