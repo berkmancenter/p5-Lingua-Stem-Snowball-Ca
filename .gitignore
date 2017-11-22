@@ -1,6 +1,6 @@
 .DS_Store
 *.o
-lib/Lingua/Stem/Snowball/Lt.c
+lib/Lingua/Stem/Snowball/Ca.c
 blib/
 _build/
 Makefile

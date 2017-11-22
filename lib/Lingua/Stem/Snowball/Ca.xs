@@ -11,14 +11,14 @@
 
 #include "include/libstemmer.h"
 
-/* All Lingua::Stem::Snowball::Lt objects and all calls to stem(),
+/* All Lingua::Stem::Snowball::Ca objects and all calls to stem(),
  * stem_in_place(), etc, reference the same set of Snowball struct
  * sb_stemmers, all held in the singleton object
- * $Lingua::Stem::Snowball::Lt::stemmifier, of class
- * Lingua::Stem::Snowball::Lt::Stemmifier.  Each sb_stemmer is created lazily, as
+ * $Lingua::Stem::Snowball::Ca::stemmifier, of class
+ * Lingua::Stem::Snowball::Ca::Stemmifier.  Each sb_stemmer is created lazily, as
  * soon as there is a need for its unique combination of language and
  * encoding.  They are destroyed during global cleanup, when
- * $Lingua::Stem::Snowball::Lt::stemmifier is reclaimed.
+ * $Lingua::Stem::Snowball::Ca::stemmifier is reclaimed.
  */
 
 typedef struct Stemmifier {
@@ -32,10 +32,10 @@ typedef struct LangEnc {
 } LangEnc;
 
 LangEnc lang_encs[] = {
-    { "lt", "UTF-8",      "UTF_8"      },
+    { "ca", "UTF-8",      "UTF_8"      },
 };
 
-MODULE = Lingua::Stem::Snowball::Lt  PACKAGE = Lingua::Stem::Snowball::Lt
+MODULE = Lingua::Stem::Snowball::Ca  PACKAGE = Lingua::Stem::Snowball::Ca
 
 PROTOTYPES: disable 
 
@@ -46,15 +46,15 @@ BOOT:
     SV *sb_stemmer_delete_sv = newSViv(PTR2IV(sb_stemmer_delete));
     SV *sb_stemmer_stem_sv   = newSViv(PTR2IV(sb_stemmer_stem));
     SV *sb_stemmer_length_sv = newSViv(PTR2IV(sb_stemmer_length));
-    hv_store(PL_modglobal, "Lingua::Stem::Snowball::Lt::sb_stemmer_list", 39,
+    hv_store(PL_modglobal, "Lingua::Stem::Snowball::Ca::sb_stemmer_list", 39,
         sb_stemmer_list_sv, 0);
-    hv_store(PL_modglobal, "Lingua::Stem::Snowball::Lt::sb_stemmer_new", 38,
+    hv_store(PL_modglobal, "Lingua::Stem::Snowball::Ca::sb_stemmer_new", 38,
         sb_stemmer_new_sv, 0);
-    hv_store(PL_modglobal, "Lingua::Stem::Snowball::Lt::sb_stemmer_delete", 41,
+    hv_store(PL_modglobal, "Lingua::Stem::Snowball::Ca::sb_stemmer_delete", 41,
         sb_stemmer_delete_sv, 0);
-    hv_store(PL_modglobal, "Lingua::Stem::Snowball::Lt::sb_stemmer_stem", 39,
+    hv_store(PL_modglobal, "Lingua::Stem::Snowball::Ca::sb_stemmer_stem", 39,
         sb_stemmer_stem_sv, 0);
-    hv_store(PL_modglobal, "Lingua::Stem::Snowball::Lt::sb_stemmer_length", 41,
+    hv_store(PL_modglobal, "Lingua::Stem::Snowball::Ca::sb_stemmer_length", 41,
         sb_stemmer_length_sv, 0);
 }
 
@@ -91,10 +91,10 @@ PPCODE:
             stemmer_id = i;
 
             /* Retrieve communal Stemmifier. */
-            stemmifier_sv = get_sv("Lingua::Stem::Snowball::Lt::stemmifier", TRUE);
+            stemmifier_sv = get_sv("Lingua::Stem::Snowball::Ca::stemmifier", TRUE);
             if (   sv_isobject(stemmifier_sv)
                 && sv_derived_from(stemmifier_sv, 
-                    "Lingua::Stem::Snowball::Lt::Stemmifier")
+                    "Lingua::Stem::Snowball::Ca::Stemmifier")
             ) {
                 IV tmp = SvIV(SvRV(stemmifier_sv));
                 stemmifier = INT2PTR(Stemmifier*, tmp);
@@ -149,15 +149,15 @@ PPCODE:
     SV *stemmifier_sv;
     
     /* Retrieve the stemmifier. */
-    stemmifier_sv = get_sv("Lingua::Stem::Snowball::Lt::stemmifier", TRUE);
+    stemmifier_sv = get_sv("Lingua::Stem::Snowball::Ca::stemmifier", TRUE);
     if (   sv_isobject(stemmifier_sv)
-        && sv_derived_from(stemmifier_sv, "Lingua::Stem::Snowball::Lt::Stemmifier")
+        && sv_derived_from(stemmifier_sv, "Lingua::Stem::Snowball::Ca::Stemmifier")
     ) {
         IV tmp = SvIV(SvRV(stemmifier_sv));
         stemmifier = INT2PTR(Stemmifier*, tmp);
     }
     else {
-        croak("$Lingua::Stem::Snowball::Lt::stemmifier isn't a Stemmifier");
+        croak("$Lingua::Stem::Snowball::Ca::stemmifier isn't a Stemmifier");
     }
 
     /* Figure out which sb_stemmer to use. */
@@ -201,7 +201,7 @@ PPCODE:
 	}
 }
 
-MODULE = Lingua::Stem::Snowball::Lt PACKAGE = Lingua::Stem::Snowball::Lt::Stemmifier
+MODULE = Lingua::Stem::Snowball::Ca PACKAGE = Lingua::Stem::Snowball::Ca::Stemmifier
 
 SV*
 new(class_name)

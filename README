@@ -1,4 +1,4 @@
-Lingua-Stem-Snowball-Lt
+Lingua-Stem-Snowball-Ca
 =======================
 
 INSTALLATION
@@ -23,7 +23,7 @@ Teodor Sigaev, teodor@stack.net
 
 Lingua::Stem::Snowball previously maintained by Fabien Potencier, fabpot@cpan.org
 
-Lithuanian language adaptation (Lingua::Stem::Snowball::Lt) copyright 2013
+Catalan language adaptation (Lingua::Stem::Snowball::Ca) copyright 2017
 by Linas Valiukas
 
 This library is free software; you can redistribute it and/or modify
@@ -32,5 +32,5 @@ at your option, any later version of Perl 5 you may have available.
 
 Snowball files and stemmers are covered by the BSD license.
 
-Lithuanian stemmer (by Z. Medelis, M. Petkevicius, T. Krilavicius) is covered
-by the Academic Free License (AFL).
+Catalan stemmer by Israel Olalla of iSOCO:
+http://snowball.tartarus.org/algorithms/catalan/stemmer.html

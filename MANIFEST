@@ -1,7 +1,7 @@
 Build.PL
 Changes
-lib/Lingua/Stem/Snowball/Lt.pm
-lib/Lingua/Stem/Snowball/Lt.xs
+lib/Lingua/Stem/Snowball/Ca.pm
+lib/Lingua/Stem/Snowball/Ca.xs
 libstemmer_c/examples/stemwords.c.disabled
 libstemmer_c/include/libstemmer.h
 libstemmer_c/libstemmer/libstemmer.c
@@ -19,8 +19,8 @@ libstemmer_c/runtime/api.c
 libstemmer_c/runtime/api.h
 libstemmer_c/runtime/header.h
 libstemmer_c/runtime/utilities.c
-libstemmer_c/src_c/stem_UTF_8_lithuanian.c
-libstemmer_c/src_c/stem_UTF_8_lithuanian.h
+libstemmer_c/src_c/stem_UTF_8_catalan.c
+libstemmer_c/src_c/stem_UTF_8_catalan.h
 Makefile.PL
 MANIFEST
 META.yml			Module meta-data (added by MakeMaker)
@@ -31,5 +31,5 @@ t/1-stem.t
 t/2-full.t
 t/98-TestPod.t
 t/99-TestPodCoverage.t
-t/test_voc/lt.utf8
+t/test_voc/ca.utf8
 typemap

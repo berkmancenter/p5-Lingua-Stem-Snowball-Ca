@@ -1,6 +1,6 @@
 README
-src_c/stem_UTF_8_lithuanian.c
-src_c/stem_UTF_8_lithuanian.h
+src_c/stem_UTF_8_catalan.c
+src_c/stem_UTF_8_catalan.h
 runtime/api.c
 runtime/api.h
 runtime/header.h

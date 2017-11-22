@@ -1,5 +1,5 @@
 use Test::More tests => 1;
 
 BEGIN {
-    use_ok('Lingua::Stem::Snowball::Lt');
+    use_ok('Lingua::Stem::Snowball::Ca');
 }

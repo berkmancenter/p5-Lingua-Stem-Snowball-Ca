@@ -1,4 +1,4 @@
-package Lingua::Stem::Snowball::Lt;
+package Lingua::Stem::Snowball::Ca;
 use strict;
 use warnings;
 use 5.006002;
@@ -15,7 +15,7 @@ use vars qw(
     %instance_vars
 );
 
-$VERSION = '0.03';
+$VERSION = '0.01';
 
 @ISA         = qw( Exporter DynaLoader );
 %EXPORT_TAGS = ( 'all' => [qw( stem )] );
@@ -29,10 +29,10 @@ __PACKAGE__->bootstrap($VERSION);
 sub dl_load_flags {0x01}
 
 # A shared home for the actual struct sb_stemmer C modules.
-$stemmifier = Lingua::Stem::Snowball::Lt::Stemmifier->new;
+$stemmifier = Lingua::Stem::Snowball::Ca::Stemmifier->new;
 
 %instance_vars = (
-    lang              => 'lt',
+    lang              => 'ca',
     encoding          => 'UTF-8',
     locale            => undef,
     stemmer_id        => -1,
@@ -93,15 +93,15 @@ __END__
 
 =head1 NAME
 
-Lingua::Stem::Snowball::Lt - Perl interface to Snowball stemmer for the Lithuanian language.
+Lingua::Stem::Snowball::Ca - Perl interface to Snowball stemmer for the Catalan language.
 
 =head1 SYNOPSIS
 
-    my @words = qw( niekada myliu );
+    my @words = qw( llengües llengua );
 
     # OO interface:
-    my $stemmer = Lingua::Stem::Snowball::Lt->new( );
-    $stemmer->stem_in_place( \@words ); # qw( niekad myl )
+    my $stemmer = Lingua::Stem::Snowball::Ca->new( );
+    $stemmer->stem_in_place( \@words ); # qw( llengu llengu )
 
     # Functional interface:
     my @stems = stem( \@words );
@@ -114,18 +114,18 @@ deployed as part of a search application, allowing searches for a given term
 to match documents which contain other forms of that term.
 
 This module is very similar to L<Lingua::Stem> -- however, Lingua::Stem is
-pure Perl, while Lingua::Stem::Snowball::Lt is an XS module which provides a Perl
-interface to the C version of the Lithuanian stemmer based on Snowball.
+pure Perl, while Lingua::Stem::Snowball::Ca is an XS module which provides a Perl
+interface to the C version of the Catalan stemmer based on Snowball.
 (L<http://snowball.tartarus.org>).  
 
 =head1 METHODS / FUNCTIONS
 
 =head2 new
 
-    my $stemmer = Lingua::Stem::Snowball::Lt->new( );
+    my $stemmer = Lingua::Stem::Snowball::Ca->new( );
     die $@ if $@;
 
-Create a Lingua::Stem::Snowball::Lt object.
+Create a Lingua::Stem::Snowball::Ca object.
 
 =head2 stem
 
@@ -165,16 +165,16 @@ Lingua::Stem::Snowball is currently maintained by Marvin Humphrey
 E<lt>marvin at rectangular dot comE<gt>.  Previously maintained by Fabien
 Potencier E<lt>fabpot at cpan dot orgE<gt>.  
 
-Lithuanian language adaptation (Lingua::Stem::Snowball::Lt) was done by
-Linas Valiukas.  Lithuanian stemmer for Snowball was created by Z. Medelis,
-M. Petkevicius and T. Krilavicius.
+Catalan language adaptation (Lingua::Stem::Snowball::Ca) was done by
+Linas Valiukas.  Catalan stemmer for Snowball was provided by
+Israel Olalla of iSOCO.
 
 =head1 COPYRIGHT AND LICENSE
 
 Perl bindings copyright 2004-2008 by Marvin Humphrey, Fabien Potencier, Oleg
 Bartunov and Teodor Sigaev.
 
-Lithuanian language adaptation (Lingua::Stem::Snowball::Lt) copyright 2013
+Catalan language adaptation (Lingua::Stem::Snowball::Ca) copyright 2017
 by Linas Valiukas.
 
 This software may be freely copied and distributed under the same
@@ -182,8 +182,8 @@ terms and conditions as Perl.
 
 Snowball files and stemmers are covered by the BSD license.
 
-Lithuanian stemmer (by Z. Medelis, M. Petkevicius, T. Krilavicius) is covered
-by the Academic Free License (AFL).
+Catalan stemmer by Israel Olalla of iSOCO:
+http://snowball.tartarus.org/algorithms/catalan/stemmer.html
 
 =head1 SEE ALSO
 

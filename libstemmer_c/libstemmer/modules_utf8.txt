@@ -8,7 +8,7 @@
 
 # List all the main algorithms for each language, in UTF-8.
 
-lithuanian      UTF_8                   lithuanian,lt,lit
+catalan      UTF_8                   catalan,ca,cat
 
 # Also include the traditional porter algorithm for english.
 # The porter algorithm is included in the libstemmer distribution to assist
